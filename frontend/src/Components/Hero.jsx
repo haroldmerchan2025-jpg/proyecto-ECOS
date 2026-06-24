@@ -22,10 +22,10 @@ function Hero() {
             </p>
 
             <div className="d-flex gap-3 justify-content-center">
-              <Button style={{ background: '#1a1a2e', color: '#d0d0d0', border: '1px solid #3a3a5a', padding: '10px 28px', borderRadius: '8px' }}>
+              <Button href="/registro" style={{ background: '#1a1a2e', color: '#d0d0d0', border: '1px solid #3a3a5a', padding: '10px 28px', borderRadius: '8px' }}>
                 Registrarse
               </Button>
-              <Button style={{ background: 'transparent', color: '#909090', border: '1px solid #2a2a2a', padding: '10px 28px', borderRadius: '8px' }}>
+              <Button href="/login" style={{ background: 'transparent', color: '#909090', border: '1px solid #2a2a2a', padding: '10px 28px', borderRadius: '8px' }}>
                 Iniciar sesión
               </Button>
             </div>
