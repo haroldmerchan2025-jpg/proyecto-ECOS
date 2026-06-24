@@ -1,0 +1,15 @@
+.background{
+    background: linear-gradient(200deg, #762bf7a1, #632b97);
+
+}
+
+.caja{    
+    width: 90%;
+    max-width: 550px;
+}
+html, body, #root{
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
