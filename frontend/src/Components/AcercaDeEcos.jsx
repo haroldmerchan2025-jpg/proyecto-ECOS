@@ -40,7 +40,9 @@ function AcercaDeEcos() {
         <Row className="g-4">
           {items.map((item, index) => (
             <Col md={4} key={index}>
-              <div style={{
+              <div 
+              className="feature-card"
+              style={{
                 background: '#050505',
                 border: '1px solid #1a1a1a',
                 borderRadius: '16px',

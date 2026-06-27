@@ -6,7 +6,8 @@ import Recuperar from './recuperar';
 import DashboardAdmin from './Dashboard_admin';
 import DashboardUsuario from './Dashboard_usuario';
 import Landing from './Landing';
-
+import Perfil from './Perfil';
+import Inicio from './Inicio';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,8 @@ function App() {
         <Route path="/recuperar" element={<Recuperar />} />
         <Route path="/dashboard_admin" element={<DashboardAdmin />} />
         <Route path="/dashboard_usuario" element={<DashboardUsuario />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/inicio" element={<Inicio />} />
       </Routes>
     </BrowserRouter>
   );

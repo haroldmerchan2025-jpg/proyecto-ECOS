@@ -19,7 +19,7 @@ function Inicio_sesion() {
                 if (data.is_staff || data.is_superuser) {
                     navigate('/dashboard_admin')
                 } else {
-                    navigate('/dashboard_usuario')
+                    navigate("/Inicio")
                 }
             } else {
                 alert("Credenciales incorrectas")
@@ -49,11 +49,19 @@ function Inicio_sesion() {
                     style={inputStyle}
                 />
 
-                <input className="form-control mb-2" type="password" placeholder="Contraseña"
+                <input
+                    className="form-control mb-2"
+                    type="password"
+                    placeholder="Contraseña"
                     value={sesion.contraseña}
                     onChange={(e) => setsesion({ ...sesion, contraseña: e.target.value })}
-                    style={inputStyle}
-                />
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                        handleLogin();
+        }
+    }}
+    style={inputStyle}
+/>
 
                 <div className="text-end mb-3">
                     <a href="/recuperar" style={{ color: '#9090c0', fontSize: '13px' }}>Recuperar contraseña</a>
