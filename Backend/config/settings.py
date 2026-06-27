@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -51,6 +54,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -78,8 +85,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ecos_db',
+        'USER': 'postgres',
+        'PASSWORD': 'haroldesproxd5',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -124,7 +135,17 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://192.168.0.7:3000",
+    "http://localhost:8000",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
@@ -133,7 +154,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'david2605pe@gmail.com'
-EMAIL_HOST_PASSWORD = 'David2605@1121'
+EMAIL_HOST_PASSWORD = 'aqui va la contraseña de aplicacion de gmail'
 DEFAULT_FROM_EMAIL = 'ECOS <david2605pe@gmail.com>'
 
 FRONTEND_URL = 'http://localhost:3000'
